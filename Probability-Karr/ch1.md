@@ -45,3 +45,25 @@ A\Delta B &= A\setminus B + B\setminus A \\
   &= A^c\Delta B^c
 \end{align*}$$
 
+
+## Exercise 1.3
+Let $B$ and $C$ be events $(A_n)$ and let $A_n=B$ if $n$ is odd and $A_n=C$ if $n$ is even. Calculate $\limsup_{n} A_n$ and $\liminf_{n} A_n$.
+
+### Solution
+Intuitively, while $n$ goes to $\infty$, $\limsup_{n} A_n$ is the set where $A_n$ will "never leave forever", and $\liminf_{n} A_n$ is the set where $A_n$ will "eventually stay forever". Since $A_n$ is alternating between $B$ and $C$, $\limsup_{n} A_n = B\cup C$ and $\liminf_{n} A_n = B\cap C$.
+
+Now, let's prove it. By definition,
+$$\begin{align*}
+\limsup_n A_n &= \bigcap_{k=1}^\infty\bigcup_{n=k}^\infty A_n \\
+  &= \bigcap_{k=1}^\infty(\bigcup_{n=2k-1}^{\infty}A_n\cup \bigcup_{n=2k}^{\infty}A_n\big) \\
+  &= \bigcap_{k=1}^\infty (B\cup C) \\
+  &= B \cup C
+\end{align*}$$
+And,
+$$\begin{align*}
+\liminf_n A_n &= \bigcup_{k=1}^\infty\bigcap_{n=k}^\infty A_n \\
+  &= \bigcup_{k=1}^\infty(\bigcap_{n=2k-1}^{\infty}A_n\cap \bigcap_{n=2k}^{\infty}A_n\big) \\
+  &= \bigcup_{k=1}^\infty (B\cap C) \\
+  &= B \cap C
+\end{align*}$$
+
