@@ -37,6 +37,7 @@ Prove that for events $A$ and $B$, $A\Delta B = A^c \Delta B^c$.
 
 ### Solution
 By definition,
+
 $$\begin{aligned}
 A\Delta B &= A\setminus B + B\setminus A \\
   &= A\cap B^c + B\cap A^c \\
