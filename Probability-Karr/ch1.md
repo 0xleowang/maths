@@ -67,3 +67,16 @@ $$\begin{align*}
   &= B \cap C
 \end{align*}$$
 
+
+## Exerpcise 1.4
+Prove part b) of proposition 1.9: Let $A_1,A_2,\ldots$ be subsets of $\Omega$. If $A_1\supseteq A_2\supseteq \cdots$, then $A_n\to A=\cap_{n=1}^\infty A_n$. (This is written as $A_n\downarrow A$)
+
+### Solution
+Let $A=\cap_{n=1}^\infty A_n$. To prove $A_n\to A$, we can show 1\) $\liminf_n A_n = A$, and 2\) $\limsup_n A_n = A$.
+
+1\) Given $A_1\supseteq A_2\supseteq \cdots$, for each $k$, $\cap_{n=k}^\infty A_n=A$. Hence by definition,
+$$ \liminf_n A_n = \bigcup_{k=1}^\infty\bigcap_{n=k}^\infty A_n=\bigcup_{k=1}^\infty A = A .$$
+
+2\) On the other hand, for each $k$, $\cup_{n=k}^\infty A_n = A_k$, by definition,
+$$ \limsup_n A_n = \bigcap_{k=1}^\infty\bigcup_{n=k}^\infty A_n = \bigcap_{k=1}^\infty A_k = A .$$
+
