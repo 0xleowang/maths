@@ -23,6 +23,8 @@ For an element $x\in A^c\cap B^c$, it means $x\in A^c$ and $x\in B^c$. In this c
 
 
 **Indicator functions**
+
+
 $$\begin{align*}
 {\bf 1}_{(A\cup B)^c} &= 1 - {\bf 1}_{A\cup B} \\
   &= 1 - \max\{{\bf 1}_{A}, {\bf 1}_{B}\} \\
