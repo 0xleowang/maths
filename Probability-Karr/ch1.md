@@ -29,11 +29,11 @@ For an element $x\in A^c\cap B^c$, it means $x\in A^c$ and $x\in B^c$. In this c
 **Indicator functions**
 
 $$\begin{align*}
-{\bf 1}_{(A\cup B)^c} &= 1 - {\bf 1}_{A\cup B} \\
-  &= 1 - \max\{{\bf 1}_{A}, {\bf 1}_{B}\} \\
-  &= \min\{1-{\bf 1}_{A}, 1-{\bf 1}_{B}\} \\
-  &= \min\{{\bf 1}_{A^c}, {\bf 1}_{B^c}\} \\
-  &= {\bf 1}_{A^c\cap B^c}
+\mathbb{1}\_{(A\cup B)^c} &= 1 - \mathbb{1}\_{A\cup B} \\
+  &= 1 - \max \left\\{ \mathbb{1}\_A, \mathbb{1}\_B \right\\} \\
+  &= \min\left\\{ 1-\mathbb{1}\_A, 1-\mathbb{1}\_B \right\\} \\
+  &= \min\left\\{ \mathbb{1}\_{A^c}, \mathbb{1}\_{B^c} \right\\} \\
+  &= \mathbb{1}\_{A^c\cap B^c}
 \end{align*}$$
 
 
