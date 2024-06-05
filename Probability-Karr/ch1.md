@@ -92,4 +92,17 @@ $$ \liminf_n A_n = \bigcup_{k=1}^\infty\bigcap_{n=k}^\infty A_n=\bigcup_{k=1}^\i
 $$ \limsup_n A_n = \bigcap_{k=1}^\infty\bigcup_{n=k}^\infty A_n = \bigcap_{k=1}^\infty A_k = A .$$
 
 
-## Exerci
+## Exercise 1.5
+Prove that
+
+a\) if $t_n\downarrow t$, then $(-\infty, t_n]\downarrow (-\infty, t]$, but that
+
+b\) if $t_n\uparrow t$ and $t_n<t$ for each $n$, then $(-\infty, t_n]\uparrow (-\infty, t)$.
+
+### Solution
+Let's prove a), then b) can be proved in a similar way. By Proposition 1.9,
+$$(-\infty, t_n] \downarrow \bigcap_{n=1}^\infty (-\infty, t_n] .$$
+It is left to show that $\cap_{n=1}^\infty(-\infty, t_n] = (-\infty, t]$.
+
+Let $x\in\cap_{n=1}^\infty(-\infty, t_n]$, then $x\leq t_n$ for all $n$. As $n\to\infty$, $t_n\to t$ and $x \leq t$, so $x\in (-\infty, t]$. On the other hand, if $x\in(-\infty, t]$, then $x\leq t\leq t_n$ for all $n$. Therefore, we have $\cap_{n=1}^\infty(-\infty, t_n] = (-\infty, t]$.
+
