@@ -77,7 +77,7 @@ $$\begin{align*}
 \end{align*}$$
 
 
-## Exerpcise 1.4
+## Exercise 1.4
 Prove part b) of proposition 1.9: Let $A_1,A_2,\ldots$ be subsets of $\Omega$. If $A_1\supseteq A_2\supseteq \cdots$, then $A_n\to A=\cap_{n=1}^\infty A_n$. (This is written as $A_n\downarrow A$)
 
 ### Solution
@@ -91,3 +91,5 @@ $$ \liminf_n A_n = \bigcup_{k=1}^\infty\bigcap_{n=k}^\infty A_n=\bigcup_{k=1}^\i
 
 $$ \limsup_n A_n = \bigcap_{k=1}^\infty\bigcup_{n=k}^\infty A_n = \bigcap_{k=1}^\infty A_k = A .$$
 
+
+## Exerci
