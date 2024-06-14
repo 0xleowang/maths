@@ -1,5 +1,6 @@
 *.build
 .trunk
+.DS_Store
 
 # latex aux
 *.aux
