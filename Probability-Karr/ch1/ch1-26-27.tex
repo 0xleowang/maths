@@ -1,0 +1,34 @@
+% Exercise 1.26
+\begin{exercise}
+  This is known as the \textit{coupon collector's problem}. There are $t$ different types of coupons available and the collector is seeking to collect one of each (for example, in order to win some premium). Show that if $n$ coupons have been collected, then the probability $p_n$ of having at least one of each type is
+
+  \[ p_n = \Sigma_{k=1}^t(-1)^{k-1}\binom{t}{k}\Big(1 - \frac{k}{t}\Big)^n .\]
+\end{exercise}
+\begin{solution}
+  Let $A_i$ be the event that the $i$-th type coupon is missing when $n$ coupons have been collected, and $\cup_{i=1}^t A_i$ is the event that at least one type is missing. Then the event of having at least one of each type is the complement of $\cup_{i=1}^t A_i$. By applying the inclusion-exclusion principle (from exercise 1.25),
+
+  \[ P(\cup_{i=1}^n A_i) = \Sigma_{k=1}^n(-1)^{k-1}S_k \]
+
+  where $S_k=\Sigma_{|J|=k}P(B_J)$ and $B_J=\cap_{j\in J}A_j$. In this problem, $B_J$ is the event that all the types in $J$ are missing once $n$ coupons have been collected, and
+
+  \[ P(B_J) = \Big(1 - \frac{k}{t} \Big)^n .\]
+
+  Since $P(B_J)$ depends only on $|J|=k$, applying exercise 1.25 b), $S_k = \binom{n}{k}\Big(1 - \frac{k}{t} \Big)^n$ and
+
+  \[ P(\cup_{i=1}^n A_i) = \Sigma_{k=1}^n(-1)^{k-1}\binom{n}{k}\Big(1 - \frac{k}{t} \Big)^n .\]
+
+  Therefore, the probability $p_n$ of having at least one of each type is
+
+  \[ p_n = 1 - P(\cup_{i=1}^n A_i) = 1 - \Sigma_{k=1}^n(-1)^{k-1}\binom{n}{k}\Big(1 - \frac{k}{t} \Big)^n. \]
+
+  (Note: It seems like there is an erratum in this exercise.)
+\end{solution}
+
+
+% Exercise 1.27
+\begin{exercise}
+  Consider an urn that initially contains $r$ red balls and $b$ black balls. At each trial one ball is drawn. It is replaced and $c\geq 0$ balls of the same color added to the urn. Let $A_j$ be the event that the $j$ th ball drawn is black. Show that $P(A_j)=b/(b+r)$ for every $j$.
+\end{exercise}
+\begin{solution}
+  TODO
+\end{solution}

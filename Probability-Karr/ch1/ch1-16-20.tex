@@ -1,0 +1,65 @@
+% Exercise 1.16
+\begin{exercise}
+  Prove that (1.15) and (1.16) are equivalent.
+\end{exercise}
+\begin{solution}
+  (1.15) $\Rightarrow$ (1.16):
+
+  \[ \limsup_{n\to\infty}P(A_n) = 1 - \liminf_{n\to\infty}P(A_n^c) \leq 1 - P(\liminf_n A_n^c) = P(\limsup_n A_n) \]
+
+  (1.16) $\Rightarrow$ (1.15):
+
+  \[ P(\liminf_n A_n) = 1 - P(\limsup_n A_n^c) \leq 1 - \limsup_{n\to\infty}P(A_n^c) = \liminf_{n\to\infty}P(A_n) \]
+\end{solution}
+
+% Exercise 1.17
+\begin{exercise}
+  Prove that there does not exist a uniform distribution on the set $\mathbb{N}=\{ 0, 1, \ldots \}$.
+\end{exercise}
+\begin{solution}
+  Assume there exists a uniform distribution on $\mathbb{N}$, which has the probability $P(A) = k|A|$ for some constant $k \geq 0$. \\
+  If $k=0$, $P(\mathbb{N})=0$ contradicts the definition of probability. \\
+  If $k>0$, $P(\mathbb{N}) = k|\mathbb{N}| = +\infty > 1$ also contradicts the definition of probability. \\
+  Therefore, by contradiction, there does not exist a uniform distribution on $\mathbb{N}$.
+\end{solution}
+
+% Exercise 1.18
+\begin{exercise}
+  Suppose that $P_1$ and $P_2$ are probabilities on $(\Omega, \cal F)$ and that $0\leq \alpha\leq 1$. Prove that the set function
+  \[ P(A) = \alpha P_1(A) + (1-\alpha)P_2(A) \]
+  is also a probability.
+\end{exercise}
+\begin{solution}
+a) As $\alpha\geq 0$ and $1-\alpha\geq 0$, $P(A)\geq 0$ for all $A\in\cal F$. \\
+b) $P(\Omega) = \alpha P_1(\Omega) + (1-\alpha) P_2(\Omega) = \alpha + (1-\alpha) = 1$. \\
+c) Let $A_1, A_2,\ldots$ are disjoint sets in $\cal F$,
+\begin{align*}
+P(\Sigma_{n=1}^\infty A_n) &= \alpha P_1(\Sigma_{n=1}^\infty A_n) + (1-\alpha) P_2(\Sigma_{n=1}^\infty A_n) \\
+  &= \alpha \Sigma_{n=1}^\infty P_1(A_n) + (1-\alpha) \Sigma_{n=1}^\infty P_2(A_n) \\
+  &= \Sigma_{n=1}^\infty (\alpha P_1(A_n) + (1-\alpha)P_2(A_n)) \\
+  &= \Sigma_{n=1}^\infty P(A_n)
+\end{align*}
+\end{solution}
+
+% Exercise 1.19
+\begin{exercise}
+  Prove that if $P(A_i)=1$ for each $i$, then
+
+  \[ P(\cap_{i=1}^\infty A_i) = 1 . \]
+\end{exercise}
+\begin{solution}
+  By Boole's inequility, $ P(\cup_{i=1}^\infty A_i^c) \leq \Sigma_{i=1}^\infty P(A_i^c) = 0 $. Since $P\geq 0$ by difinition, $P(\cup_{i=1}^\infty A_i^c) = 0$. Thus
+
+  \[ P(\cap_{i=1}^\infty A_i) = 1 - P(\cup_{i=1}^\infty A_i^c) = 1 .\]
+\end{solution}
+
+% Exercise 1.20
+\begin{exercise}
+  Show that for events $A$ and $B$,
+  \[ P(A\cap B) \geq P(A) + P(B) - 1. \]
+\end{exercise}
+\begin{solution}
+  By Boole's inequality,
+
+  \[ P(A\cap B) = 1 - P(A^c\cup B^c) \geq 1 - P(A^c) - P(B^c) = P(A) + P(B) - 1 . \]
+\end{solution}

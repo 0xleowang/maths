@@ -1,0 +1,71 @@
+% Exercise 1.21
+\begin{exercise}
+  Let $P$ be a probability on $\mathbb{R}$. Prove that for every $\varepsilon>0$ there is a compact set $K$ such that $P(K)>1-\varepsilon$.
+\end{exercise}
+\begin{solution}
+  Consider compact intervals $K_n=[-n, n]$, $n\in\mathbb{N}$. As $n\to\infty$, $K_n\uparrow \mathbb{R}$ and $P(K_n)\uparrow 1$. For an arbitrary $\varepsilon>0$, there must exist a sufficiently large $n$ such that $P(K_n)>1-\varepsilon$.
+\end{solution}
+
+% Exercise 1.22
+\begin{exercise}
+  Prove that a distribution function on $\mathbb{R}$ has at most countably many points of discontinuity.
+\end{exercise}
+\begin{solution}
+  TODO
+\end{solution}
+
+
+% Exercise 1.23
+\begin{exercise}
+  Prove that if $P(A)>0$, then the set function
+
+  \[ P_A(B) = P(B|A) \]
+
+  is a probability on $(\Omega, \cal F)$ satisfying $P_A(A^c)=0$.
+\end{exercise}
+\begin{solution}
+  By Bayes' theorem,
+
+  \[ P_A(A^c) = \frac{P(A^c\cap A)}{P(A)} = \frac{P(\emptyset)}{P(A)} = 0. \]
+\end{solution}
+
+% Exercise 1.24
+\begin{exercise}
+  Let $P$ be the uniform distribution on a fininte set $\Omega$ and let $A$ be a subset $\Omega$. Prove that $P(\cdot|A)$ is the uniform distribution on $A$.
+\end{exercise}
+\begin{solution}
+  For an arbitrary set $B\subseteq A$, by Bayes' theorem,
+
+  \[ P(B|A) = \frac{P(B\cap A)}{P(A)} = \frac{P(B)}{P(A)} = \frac{|B|}{|A|}, \]
+
+  which coincides the probability of a uniform distribution on $A$.
+\end{solution}
+
+
+% Exercise 1.25
+\begin{exercise}
+  Let $A_1,\ldots,A_n$ be events, and for $J\subseteq \{ 1,\ldots,n \}$, let $B_J=\cap_{j\in J}A_j$. For $k\geq 1$, let $S_k=\Sigma_{|J|=k}P(B_J)$, where the sum is over all subsets $J$ of $\{ 1,\ldots,n \}$ with $|J|=k$.
+
+  a) Prove the \textit{inclusion-exclusion principle}:
+
+  \[ P(\bigcup_{i=1}^n A_i) = \Sigma_{k=1}^n (-1)^{k-1}S_k .\]
+
+  b) Suppose that $P(B_J)$ depends only on $|J|$, i.e., there are numbers $q_0,\ldots,q_n$ such that $P(B_J)=q_k$ whenever $|J|=k$. (This is true, for example, in Exercise 1.15.) Prove that $S_k = \binom{n}{k} q_k$.
+\end{exercise}
+\begin{solution}
+  a) Prove the inclusion-exclusion principle by induction is such a pain. Here we show a simpler proof by borrowing Definition 4.1 of expectation.
+
+  Using indicator functions, we have
+
+  \[ \dsone_{\cup_{i=1}^n A_i} = 1 - \dsone_{\cap_{i=1}^n A_i^c} = 1 - \prod_{i=1}^n (1 - \dsone_{A_i}) . \]
+
+  Expanding this equation, we can get
+
+  \[ \dsone_{\cup_{i=1}^n A_i} = \Sigma_{k=1}^n(-1)^{k-1}\Sigma_{|J|=k}\prod_{j\in J}\dsone_{A_j} .\]
+
+  Taking expectation from both sides tives the inclusion-exclusion principle.
+
+  b) As $\binom{n}{k}$ represents the number of combinations of choosing $k$ from $n$:
+
+  \[S_k=\Sigma_{|J|=k}P(B_J) = \Sigma_{|J|=k}q_k = \binom{n}{k}q_k. \]
+\end{solution}
