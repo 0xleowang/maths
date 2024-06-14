@@ -38,3 +38,12 @@
 
 \end{solution}
 
+
+% Exercise 2.2
+\begin{exercise}
+  Prove that if $X$ and $Y$ are random variables, then $\{X\leq Y\}$, $\{X<Y\}$ and $\{X=Y\}$ are events.
+\end{exercise}
+\begin{solution}
+  To prove $\{X\leq Y\}$ is an event, we can show that $\{X\leq Y\}\in\cF$. By Proposition 2.13, $X-Y$ is a random variable. By Proposition 2.12, $\{X\leq Y\}=\{X-Y\leq 0\}\in\cF$. Similarly, $\{X<Y\}\in\cF$. Hence $\{X=Y\}=\{X\leq Y\}\backslash\{X<Y\}\in\cF$.
+\end{solution}
+
