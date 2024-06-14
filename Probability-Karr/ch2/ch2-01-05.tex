@@ -1,0 +1,40 @@
+% Exercise 2.1
+\begin{exercise}
+  Let $\Omega=\{1,2,3,4,5,6\}$, and let$\cF=\sigma(\{1,2,3,4\},\{3, 4, 5, 6\})$. \\
+  a) List all sets in $\cF$. \\
+  b) Is the function
+    \[
+      X(\omega) = \begin{cases}
+        2 & \omega = 1, 2, 3, 4 \\
+        7 & \omega = 5, 6
+      \end{cases}
+    \]
+    a random variable over $(\Omega, \cF)$? \\
+  c) Given an example of a function on $\Omega$ that is \textit{not} a random variable over $(\Omega, \cF)$. \\
+  d) Show that there exists a probability $P$ on $(\Omega, \cF)$ such that $P(A)$ is zero or one for all $A\in\cF$, yet $P$ is not a point mass.
+\end{exercise}
+\begin{solution}
+  a) \[ \cF = \{ \emptyset, \{1, 2\}, \{3, 4\}, \{5, 6\}, \{1, 2, 3, 4\}, \{1, 2, 5, 6\}, \{3, 4, 5, 6\}, \Omega \} .\]
+
+  b) \[
+       \{X\leq t\} = \begin{cases}
+         \emptyset & t < 2 \\
+         \{1, 2, 3, 4\} & 2 \leq t < 7 \\
+         \Omega & t \geq 7
+       \end{cases}
+     \]
+    Given $\{X\leq t\}$ for every $t\in\bR$, by Proposition 2.12, $X$ is a random variable over $(\Omega, \cF)$. \\
+
+  c) Consider a function $Y$ such that
+    \[
+      Y(\omega) = \begin{cases}
+        2 & \omega = 1 \\
+        7 & \omega = 2, 3, 4, 5, 6
+      \end{cases}
+    \]
+    Since $\{X\leq 2\} = \{1\}\notin\cF$, $Y$ is not a random variable over $(\Omega, \cF)$. \\
+
+  d) Consider a probability meausre $P$ such that $P(A) = \dsone(A\supseteq\{1, 2\})$. It can be easily verified that $P$ is a probability measure, yet $P$ is not a point mass.
+
+\end{solution}
+
