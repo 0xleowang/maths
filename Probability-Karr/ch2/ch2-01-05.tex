@@ -47,3 +47,19 @@
   To prove $\{X\leq Y\}$ is an event, we can show that $\{X\leq Y\}\in\cF$. By Proposition 2.13, $X-Y$ is a random variable. By Proposition 2.12, $\{X\leq Y\}=\{X-Y\leq 0\}\in\cF$. Similarly, $\{X<Y\}\in\cF$. Hence $\{X=Y\}=\{X\leq Y\}\backslash\{X<Y\}\in\cF$.
 \end{solution}
 
+
+% Exercise 2.3
+\begin{exercise}
+  Let $X$ and $Y$ be random variables and let $A$ be an event. Prove that the function
+  \[
+    Z(\omega) = \begin{cases}
+      X(\omega) & \mbox{if } \omega\in A \\
+      Y(\omega) & \mbox{if } \omega\in A^c
+    \end{cases}
+  \]
+  is a random variable.
+\end{exercise}
+\begin{solution}
+  Recall that indicator functions of an event are random variables (Example 2.4). As $Z = \dsone_A X + (1-\dsone_A) Y$, by Proposition 2.13, $Z$ is a random variable.
+\end{solution}
+
