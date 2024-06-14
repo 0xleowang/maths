@@ -1,0 +1,85 @@
+% Exercise 1.6
+\begin{exercise}
+  Show that the disjointification procedure used to prove Proposition 1.24 actually yields $\cup_{n=1}^k A_n=\Sigma_{n=1}^k B_n$ for every $k$.
+\end{exercise}
+\begin{solution}
+  Let $k=1$, then $A_1=B_1$. Assuming $\cup_{n=1}^k A_n=\Sigma_{n=1}^k B_n$ holds for some $k>1$, then
+  \begin{align*}
+    \cup_{n=1}^{k+1} A_n &= A_{k+1}\cup (\cup_{n=1}^{k} A_n) \\
+      &= (A_{k+1}\backslash\cup_{n=1}^{k} A_n) + \cup_{n=1}^{k} A_n \\
+      &= B_{k+1} + \Sigma_{n=1}^k B_n \\
+      &= \Sigma_{n=1}^{k+1} B_n
+  \end{align*}
+
+  Therefore, the statement is proved by induction.
+\end{solution}
+
+
+% Exercise 1.7
+\begin{exercise}
+  Prove (1.1) through (1.4): \\
+  (1.1) $\dsone_{A \cup B} = \max \{ \dsone_A, \dsone_B \}$ \\
+  (1.2) $\dsone_{A \cap B} = \min \{ \dsone_A, \dsone_B \}  = \dsone_A \dsone_B$ \\
+  (1.3) $\dsone_{A^c} = 1 - \dsone_A$ \\
+  (1.4) $\dsone_{A \Delta B} = |\dsone_A - \dsone_B|$
+\end{exercise}
+\begin{solution}
+  Note that both sides of the above equations are either or 0 or 1. If one side equals to 1, then it must be greater and equal to another side. Therefore, we just need to focus on the case when one side equals to 0. Let $\omega \in\Omega$.
+
+  ~\\ (1.1) $(\geq)$ If $\dsone_{A \cup B}(\omega) = 0$, by definition $\omega\notin (A\cup B)$. This means that $\omega\notin A$ and $\omega\notin B$, that is $\dsone_A(\omega) = \dsone_B(\omega) = 0$.
+
+  $(\leq)$ If $\max \{ \dsone_A, \dsone_B \} (\omega) = 0$, it must be true that $\dsone_A(\omega)=\dsone_B(\omega)=0$. By definition, $\omega\notin A$ and $\omega\notin B$. Hence $\omega\notin A\cup B$ and $\dsone_{A \cup B}(\omega)=0$.
+
+  ~\\ (1.2) $(\geq)$ If $\dsone_{A \cap B}(\omega)=0$, then $\omega\in A$ and $\omega\in B$ cannot happen simultaneously and $\min \{ \dsone_A, \dsone_B \} (\omega) = 0$.
+
+  $(\leq)$ If $\min \{ \dsone_A, \dsone_B \} (\omega) = 0$, then it is either $\dsone_A(\omega)=0$ or $\dsone_B(\omega)=0$. This means that either $\omega\notin A$  or $\omega\notin B$. In either of these cases, $\dsone_{A \cap B}(\omega)=0$.
+
+  ~\\ (1.3) $(\geq)$ If $\dsone_{A^c}(\omega) = 0$, then $\omega\notin A^c$ but $\omega\in A$, and $1-\dsone_{A}(\omega) = 0$.
+
+  $(\leq)$ If $1 - \dsone_A(\omega) = 0$, then $\dsone_A(\omega)=1$ and $\omega\in A$. Thus $\omega\notin A^c$ and $\dsone_{A^c}(\omega)=0$.
+
+  ~\\ (1.4) $(\geq)$ If $\dsone_{A \Delta B}(\omega)=0$, then it is either $\omega\in(A\cup B)^c$ or $\omega\in(A\cap B)$. The former case gives $\dsone_A(\omega)=\dsone_B(\omega)=0$ and the latter case gives $\dsone_A(\omega)=\dsone_B(\omega)=0$. Both cases yield $|\dsone_A-\dsone_B|(\omega)=0$.
+
+  $(\leq)$ If $|\dsone_A-\dsone_B|(\omega)=0$, similar to the previous case, it is either $\omega\in A$ and $\omega\in B$ occur simultaneously, or $\omega\notin A$ and $\omega\notin B$ occur simultaneously. In either case, $\dsone_{A \Delta B}(\omega)=0$.
+\end{solution}
+
+
+% Exercise 1.8
+\begin{exercise}
+  Let $A_1,A_2,\ldots$ be events. Prove that $A_n\to A$ if and only if $\dsone_{A_n}\to \dsone_A$ as functions on $\Omega$ (that is, $\dsone_{A_n}(\omega)\to\dsone_A(\omega)$ for every $\omega$).
+\end{exercise}
+\begin{solution}
+  Using (1.1) and (1.2) from Exercise 1.7, we have
+  \begin{align*}
+    \dsone_{\liminf_n A_n} &= \dsone_{ \cup_{k=1}\cap_{n=k}^\infty A_n } \\
+      &= \sup_{k\geq 1}\dsone_{\cap_{n=k}^\infty A_n } \quad\text{by (1.1)} \\
+      &= \sup_{k\geq 1}\inf_{n\geq k}\dsone_{A_n } \quad\text{by (1.2)} \\
+      &= \liminf_n \dsone_{A_n}
+  \end{align*}
+  Similarly, we can prove $\dsone_{\limsup_n A_n} = \limsup_n \dsone_{A_n}$. Using these two results, the statement can be easily proved.
+\end{solution}
+
+
+% Exercise 1.9
+\begin{exercise}
+  Given subsets $A$ and $B$ of $\Omega$, identify all sets in $\sigma(A, B)$.
+\end{exercise}
+\begin{solution}
+  Let $A_1=(A\cup B)^c, A_2=A\backslash B, A_3=A\cap B, A_4=B\ A$ be finite partitions of $\Omega$. Then
+  \begin{align*}
+  \sigma(A, B) = \{ & \emptyset, A_1, A_2, A_3, A_4, \\
+    & A_1\cup A_2, A_1\cup A_3, A_1\cup A_4, A_2\cup A_3, A_2\cup A_4, A_3\cup A_4, \\
+    & A_1\cup A_2\cup A_3, A_1\cup A_2\cup A_4, A_2\cup A_3\cup A_4, \Omega  \}
+  \end{align*}
+\end{solution}
+
+
+% Exercise 1.10
+\begin{exercise}
+  Prove that $\{ x \} $ is a Borel set for every $x\in\bR$.
+\end{exercise}
+\begin{solution}
+  By definition, a Borel set is an element of $\cB(\bR)$, so the statement can be proved by representing $\{ x \} $ by countable intersections and complement of intervals $(a, b]$, where $a<b$ in $\bR\cup \{ -\infty, +\infty \} $:
+
+  \[ \{ x \}  = (-\infty, x] \backslash \cap_{n=1}^\infty (-\infty, x-\frac{1}{n}] .\]
+\end{solution}
