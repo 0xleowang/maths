@@ -4,7 +4,30 @@
 \end{exercise}
 \begin{solution}
   We can write $B=(C+C^c)\cap B=C\cap B+C^c\cap B$. Since $X$ is discrete with values only in $C$, $P\{X\in C^c\cap B\}=0$ and $P\{X\in B\} = P\{X\in C\cap B\}$. As $C$ is countable, then $C\cap B = \cup_{a\in C\cap B}\{a\}$ is also countable. Hence
-
   \[ P\{X\in B\} = P\{X\in\cup_{a\in C\cap B}\{a\}\} = \Sigma_{a\in C\cap B}P\{X=a\} \]
+\end{solution}
+
+
+% Exercise 2.7
+\begin{exercise}
+  Consider a random permutation of the intergers $\{1,\ldots,n\}$, with all $n!$ permutations equally likely. For each $i$, let $X_i$ be the integer in the $i$th position, and let $A_i=\{X_i=i\}$. (Physically, this means that there is a \textit{match} in the $i$th position.) \\
+  a) Use the inclusion-exclusion principle (Exercise 1.25) to show that the probability of at least one match is
+  \[ P(\cup_{i=1}^nA_i) = \Sigma_{k=1}^n (-1)^{k-1}/k!. \]
+  b) Let $p_n$ be the probability of no match. Show that $\lim_n p_n=1/e$.
+\end{exercise}
+\begin{solution}
+  a) Recall the inclusion-exclusion principle:
+  \[ P(\cup_{i=1^n}A_i) = \Sigma_{k=1}^n(-1)^{k-1}S_k \]
+  where $S_k = \Sigma_{|J|=k} P(\cap_{j\in J}A_j)$ and $J\subseteq\{1,\ldots,n\}$. As $P(\cap_{j\in J}A_j)$ is the probability of there is a match in the $j$th position for every $j\in J$, we can derive it by counting. Consider the $k$ positions in $J$, the first position has $n$ intergers to choose, and the second position then has $n-1$ integers to choose, etc. Hence
+  \[ P(\cap_{j\in J}A_j) = \frac{1}{n(n-1)\cdots(n-k+1)} = \frac{(n-k)!}{n!} .\]
+  For $|J|=k$, there are $\binom{n}{k}$ numbers of distinct $J$. Thus
+  \[ S_k = \Sigma_{|J|=k}P(\cap_{j\in J}A_j) = \binom{n}{k}\frac{(n-k)!}{n!} = \frac{n!}{k!(n-k)!}\cdot\frac{(n-k)!}{n!} = \frac{1}{k!} .\]
+
+  b)\begin{align*}
+    p_n = 1 - P(\cup_{i=1}^n A_i) &= 1 - \Sigma_{k=1}^n\frac{(-1)^{k-1}}{k!} \\
+      &= 1 + \Sigma_{k=1}^n\frac{(-1)^{k}}{k!} \\
+      &= \Sigma_{k=0}^n\frac{(-1)^{k}}{k!} \to \frac{1}{e} \quad\mbox{as $n\to\infty$} .
+  \end{align*}
+  The limit is justified by the Taylor expansion of $e^{-1}$.
 \end{solution}
 
