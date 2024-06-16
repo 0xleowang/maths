@@ -43,3 +43,16 @@
 
   If $\lambda$ is an integer, by a similar argument, we can show that $i\mapsto P\{X=i\}$ is non-decreasing for $k\leq\lambda$ and non-increasing for $k\geq\lambda-1$. Then the maximum value is at $k$ such that $\lambda-1\leq k\leq \lambda$. Since both $k$ and $\lambda$ are integers, the same maximum value is at both $k=\lambda$ and $k=\lambda -1$.
 \end{solution}
+
+
+% Exercise 2.9
+\begin{exercise}
+  Let $X$ has density
+  \[ f_X(x) = \frac{1}{\pi(1+x^2)},\qquad x\in\bR, \]
+  known as a \textit{Cauchy density}. Show that
+  \[ F_X(t) = 1/2 + (1/\pi)\arctan t. \]
+\end{exercise}
+\begin{solution}
+  \[ F_X(t) = \int_{-\infty}^t f_X(x)dx = \int_{-\infty}^t\frac{1}{\pi(1+x^2)}dx = (1/\pi)\arctan t + C \]
+  where $C$ is a constant. To determine $C$, using the symmetry of $f_X(x)$, we have $F_X(0)=1/2$, which gives $C=1/2$.
+\end{solution}
