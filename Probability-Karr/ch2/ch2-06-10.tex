@@ -1,0 +1,10 @@
+% Exercise 2.6
+\begin{exercise}
+  Show that if $X$ is discrete with values in the countable set $C$, then for every $B\in\cB(\bR)$, $P\{X\in B\}=\Sigma_{a\in C\cap B}P\{X=a\}$.
+\end{exercise}
+\begin{solution}
+  We can write $B=(C+C^c)\cap B=C\cap B+C^c\cap B$. Since $X$ is discrete with values only in $C$, $P\{X\in C^c\cap B\}=0$ and $P\{X\in B\} = P\{X\in C\cap B\}$. As $C$ is countable, then $C\cap B = \cup_{a\in C\cap B}\{a\}$ is also countable. Hence
+
+  \[ P\{X\in B\} = P\{X\in\cup_{a\in C\cap B}\{a\}\} = \Sigma_{a\in C\cap B}P\{X=a\} \]
+\end{solution}
+
