@@ -56,3 +56,14 @@
   \[ F_X(t) = \int_{-\infty}^t f_X(x)dx = \int_{-\infty}^t\frac{1}{\pi(1+x^2)}dx = (1/\pi)\arctan t + C \]
   where $C$ is a constant. To determine $C$, using the symmetry of $f_X(x)$, we have $F_X(0)=1/2$, which gives $C=1/2$.
 \end{solution}
+
+
+% Exercise 2.10
+\begin{exercise}
+  Show that the analogue of (2.8) for $g$ continuous and strictly decreasing is
+  \[ P\{Y\leq t\}=1-F_X(h(t)-). \]
+\end{exercise}
+\begin{solution}
+  \[ P\{Y\leq t\} = P\{g(x)\leq t\} = P\{X\geq h(t)\} = 1 - P\{X<h(t)\} = 1 - F_X(h(t)-). \]
+  The last equality is justified as $F_X$ is right-continuous.
+\end{solution}
