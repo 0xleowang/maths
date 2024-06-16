@@ -31,3 +31,15 @@
   The limit is justified by the Taylor expansion of $e^{-1}$.
 \end{solution}
 
+
+% Exercise 2.8
+\begin{exercise}
+  Let $X$ have distribution $P(\lambda)$. Show that the function $i\mapsto P\{X=i\}$ is first increasing and then descreasing, with its maximum value at $\lfloor\lambda\rfloor$, the largest integer less than or equal to $\lambda$.
+\end{exercise}
+\begin{solution}
+  Let us first assume that $\lambda$ is not an integer. For $k\geq 1$, let $P\{X=k\} - P\{X=k-1\} > 0$, that is
+  \[ P\{X=k\} - P\{X=k-1\} = \frac{e^{-\lambda}\lambda^{k}}{k!} - \frac{e^{-\lambda}\lambda^{k-1}}{(k-1)!} = \frac{e^{-\lambda}\lambda^{k-1}}{(k-1)!}\big(\frac{\lambda}{k} -1\big) > 0 .\]
+  As $\frac{e^{-\lambda}\lambda^{k-1}}{(k-1)!}>0$, this gives $\frac{\lambda}{k}-1> 0$ and $k<\lambda$, which shows that the function $i\mapsto P\{X=i\}$ is increasing for $k<\lambda$. Next, we let $P\{X=k\} - P\{X=k+1\} > 0$ for $k\geq 0$. Similarly, we get $k > \lambda - 1$, which shows that $i\mapsto P\{X=i\}$ is descreasing for $k>\lambda - 1$. The maximum value is at a $k$ such that $\lambda-1<k<\lambda$. As $k$ is an integer, it must be $\lfloor\lambda\rfloor$ (as we assumed that $\lambda$ is not an integer).
+
+  If $\lambda$ is an integer, by a similar argument, we can show that $i\mapsto P\{X=i\}$ is non-decreasing for $k\leq\lambda$ and non-increasing for $k\geq\lambda-1$. Then the maximum value is at $k$ such that $\lambda-1\leq k\leq \lambda$. Since both $k$ and $\lambda$ are integers, the same maximum value is at both $k=\lambda$ and $k=\lambda -1$.
+\end{solution}
