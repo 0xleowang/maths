@@ -1,0 +1,40 @@
+% Exercise 2.11
+\begin{exercise}
+  a) Let $X$ have distribution function $F$. For each $k$, calculate the distribution function of $|X|^k$. \\
+  b) Let $X$ be absolutely continuous. Compute the density of $|X|$.
+\end{exercise}
+\begin{solution}
+  a) If $k>0$,
+  \begin{align*}
+    P(|X|^k\leq t) &= P(|X|\leq t^{1/k}) \\
+      &= P(-t^{1/k}\leq X\leq t^{1/k}) \\
+      &= P(X\leq t^{1/k}) - P(X<-t^{1/k}) \\
+      &= F(t^{1/k}) - F((-t^{1/k})-) .
+  \end{align*}
+  If $k<0$,
+  \begin{align*}
+    P(|X|^k\leq t) &= P(|X|\geq t^{1/k}) \\
+      &= P(\{X\geq t^{1/k}\}\cup\{X\leq -t^{1/k}\}) \\
+      &= P(X\geq t^{1/k}) + P(X\leq -t^{1/k}) \quad \mbox{as disjoint} \\
+      &= 1 - P(X<t^{1/k}) + P(\leq -t^{1/k}) \\
+      &= 1 - F(t^{1/k}-) + F(-t^{1/k}) .
+  \end{align*}
+  If $k=0$, $P(|X|^0\geq t) = P(1\leq t)$. Since $\{1\leq t\}=\emptyset, \forall t<1$ and $\{1\leq t\}=\Omega, \forall t\geq 1$,
+  \[
+    P(1\leq t) = \begin{cases}
+      0 & t < 1 \\
+      1 & t \geq 1
+    \end{cases},
+  \]
+  which is a step function. \\
+
+  b) \begin{align*}
+    F_{|X|}(t) = P(|X|\leq t) &= P(-t\leq X\leq t) \\
+      &= P(X\leq t) - P(X<-t) \\
+      &= F_X(t) - F_X((-t)-) \\
+      &= F_X(t) - F_X(-t) .
+  \end{align*}
+  The last equality is justified as $X$ is absolutely continuous. Differentiating the above equation with respect to $t$ on both sides gives the density
+  \[ f_{|X|}(t) = f_X(t) + f_X(-t) .\]
+\end{solution}
+
