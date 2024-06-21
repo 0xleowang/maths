@@ -38,3 +38,27 @@
   \[ f_{|X|}(t) = f_X(t) + f_X(-t) .\]
 \end{solution}
 
+
+% Exercise 2.12
+\begin{exercise}
+  Let $X$ have distribution function $F$. Calculate the distribution functions of $X^+$ and $X^-$.
+\end{exercise}
+\begin{solution}
+  For $X^+$, if $t<0$, then $\{X^+\leq t\}=\emptyset$ and $P(X^+\leq t)=0$. If $t\geq 0$, then $\{X^+\leq t\} = \{0<X\leq t\}+\{X\leq 0\}$. Hence
+  \begin{align*}
+    P(X^+\leq t) &= P(0<X\leq t) + P(X\leq 0) \\
+      &= P(X\leq t) - P(X\leq 0) + P(X\leq 0) \\
+      &= P(X\leq t) \\
+      &= F(t) .
+  \end{align*}
+  Combining both cases, $F_{X^+}(t)=P(X^+\leq t) = F(t)\dsone\{t\geq 0\}$. \\
+
+  For $X^-$, $P(X^-\leq t) = 1 - P(X^->t)$. If $t\geq 0$, then $\{X^->t\}=\emptyset$ $P(X^t>t) = 0$. If $t<0$, then $\{X^->t\} = \{t<X\leq 0\}+\{X>0\}$. Hence
+  \begin{align*}
+    P(X^->t) &= P(t<X\leq 0) + P(X> 0) \\
+      &= P(X\leq 0) - P(X\leq t) + 1 - P(X\leq 0) \\
+      &= 1 - P(X\leq t) \\
+      &= 1 - F(t) .
+  \end{align*}
+  Combining both cases, $F_{X^-}(t)=P(X^-\leq t) = \dsone\{t\geq 0\} + (1-\dsone\{t\geq 0\})F(t)$.
+\end{solution}
