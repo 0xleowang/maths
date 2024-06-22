@@ -62,3 +62,56 @@
   \end{align*}
   Combining both cases, $F_{X^-}(t)=P(X^-\leq t) = \dsone\{t\geq 0\} + (1-\dsone\{t\geq 0\})F(t)$.
 \end{solution}
+
+
+% Exercise 2.13
+\begin{exercise}
+  Assume that $X$ is positive and absolutely continuous with density $f$ and distribution $F$ satisfying $F(s)<1$ for all $s<\infty$, and let $H(s)=-\log(1-F(s))$. \\
+  a) Prove that $H$ is differentiable with derivative $h=f/(1-F)$, which is termed the \textit{hazard function} of $T$ (or $F$). \\
+  b) Prove that for each $t$,
+  \[ h(t) = \lim_{h\downarrow 0}\frac{1}{h}P\{X\leq t+h|X>t\}. \]
+  c) Prove that $\int_0^\infty h(t)dt=\infty$. \\
+  d) Prove that
+  \[ P\{X>t+s|X>t\} = \exp\bigg[-\int_t^{t+s}h(u)du \bigg] \]
+  for each $t$ and $s$. \\
+  e) Prove that $X\deq E(\lambda)$ if and only if $h\equiv \lambda$.
+\end{exercise}
+\begin{solution}
+  a) Since $F(s)<1$ for all $s<\infty$, we have $1-F(s)>0$. As $\log(x)$ is continuous and differentiable for all $x>0$, it is clear that $H$ is differentiable. Applying chain rule, it can be easily showed that $h=f/(1-F)$. \\
+
+  b) \begin{align*}
+    \lim_{h\downarrow 0}\frac{1}{h}P(X\leq t+h|X>t) &= \lim_{h\downarrow 0}\frac{1}{h}\frac{P(t<x\leq t+h)}{P(x>t)} \\
+      &= \lim_{h\downarrow 0}\frac{1}{h}\frac{P(x\leq t+h) - P(x\leq t)}{1-P(X\leq t)} \\
+      &= \lim_{h\downarrow 0}\frac{1}{h}\frac{F(t+h)-F(t)}{1-F(t)} \\
+      &= \frac{1}{1-F(t)}\lim_{h\downarrow 0} \frac{F(t+h)-f(t)}{h} \\
+      &= \frac{f(t)}{1-F(t)} \\
+      &= h(t).
+  \end{align*}
+
+  c) As $X$ is positive, $F(0)=0$. Then,
+  \begin{align*}
+    \int_0^\infty h(t)dt &= \lim_{n\to\infty} H(n) - H(0) \\
+      &= \lim_{n\to\infty} -\log(1-F(n)) + \log(1-F(0)) \\
+      &= \lim_{n\to\infty} -\log(1-F(n)) .
+  \end{align*}
+  Given $F(n)\to 1$ as $n\to\infty$, it is clear that $\int_0^\infty h(t)dt=\infty$.
+
+  d) \begin{align*}
+    P(X>t+s|X>t) &= \frac{P(X>t+s)}{P(X>t)} \\
+      &= \frac{1 - P(X\leq t+s)}{1 - P(X\leq t)} \\
+      &= \frac{1 - F(t+s)}{1 - F(t)} \\
+      &= \frac{\exp\{-H(t+s)\}}{\exp\{-H(t)\}} \\
+      &= \exp\{-(H(t+s)-H(t))\} \\
+      &= \exp\bigg[ -\int_t^{t+s}h(u)du \bigg] .
+  \end{align*}
+
+  e) For sufficiency, if $X\deq E(\lambda)$, we have $f(x)=\lambda e^{=\lambda x}, x>0$ and $F(x)=1-e^{-\lambda x}, x>0$. Thus,
+  \[h(x) = \frac{f(x)}{1-F(x)} = \frac{\lambda e^{-\lambda x}}{e^{-\lambda x}} = \lambda, \quad \forall x>0 .\]
+  For necessity, if $h\equiv \lambda$, we have $\lambda = f/(1-F)$. This is equivalent to the following ODE (ordinary differential equation):
+  \[ \pderiv{F}{x} + \lambda F = \lambda . \]
+  Taking derivatives of $e^{\lambda x}F$ gives
+  \[ \pderiv{(e^{\lambda x}F(x))}{x} = e^{\lambda x}\pderiv{F(x)}{x} + \lambda e^{\lambda x}F(x) = \lambda e^{\lambda x}.\]
+  The last equality is obtained by using the above ODE. Therefore, we have
+  \[ e^{\lambda x}F(x) = e^{\lambda x} + C \quad\Rightarrow\quad F(x) = 1 + Ce^{-\lambda x} ,\]
+  where $C$ is a constant. Since $X$ is positive and $F(0)=0$, we have $C=-1$ and $F(x)=1-e^{-\lambda x}$ that is the distribution function of $E(\lambda)$.
+\end{solution}
