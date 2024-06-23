@@ -1,0 +1,10 @@
+% Exercise 2.16
+\begin{exercise}
+  Let $X$ have distribution $N(0,1)$. Calculate the density of $Y=e^X$, which is said to have a \textit{log normal distribution}.
+\end{exercise}
+\begin{solution}
+  We can write $Y=e^X$ as $Y=g(X)$ where $g(x):=e^x$. Then $g$ has an inverse function $h(y)=\log y$ that has derivative $h'(y)=1/y$. By Theorem 2.41, we have
+  \[
+    f_Y(y)=f_X(h(y))|h'(t)| = f_X(\log y)/y = \frac{1}{\sqrt{2\pi}y}e^{-(\log y)^2/2}, \quad y>0.
+  \]
+\end{solution}
