@@ -51,3 +51,31 @@
   \]
   (The answer can be verified by checking $\int_0^\infty f_Y(y)dy = 1$.)
 \end{solution}
+
+
+% Exercise 2.20
+\begin{exercise}
+  Suppose that $Y=X^2$. \\
+  a) Prove that for $t\geq 0$,
+  \[ F_Y(t) = F_X(\sqrt{t}) - F_X((-\sqrt{t})-). \]
+  b) Prove that if $X$ is absolutely continuous, then $Y$ is absolutely continuous with
+  \[ f_Y(y) = \frac{f_X(\sqrt{y}) + f_X(-\sqrt{y})}{2\sqrt{y}}, \quad y>0. \]
+  c) Prove that if $X\deq N(0, 1)$, then $Y$ has a $\chi^2$ distribution with one degree of freedom.
+\end{exercise}
+\begin{solution}
+  a) For $t\geq 0$,
+  \begin{align}\label{eq:2.20b}
+    F_Y(t) &= P\{Y\leq t\} = P\{X^2\leq t\} = P\{-\sqrt{t}\leq X\leq\sqrt{t}\} \\
+      &= P\{X\leq\sqrt{t}\} - P\{X<-\sqrt{t}\} = F_X(\sqrt{t}) - F_X((-\sqrt{t})-) .
+  \end{align}
+
+  b) If $X$ is absolutely continuous, then $X$ has a density function $f(t)=F'(t)$. Differentiating on both sides of \eqref{eq:2.20b}, we have
+  \[ f_Y(t) = F'_X(\sqrt{t}) - F'_X(-\sqrt{t}) = \frac{f_X(\sqrt{t})+f_X(-\sqrt{t})}{2\sqrt{Y}} , \quad t\geq 0. \]
+  The density has support on $[0,\infty)$ as $Y= X^2\geq 0$.
+
+  c) If $X\deq N(0, 1)$, then $f_X(x)=\frac{1}{\sqrt{2\pi}}e^{-x^2/2}$. From b), we have
+  \[ f_Y(y) = \frac{e^{-y/2}/\sqrt{2\pi}+e^{-y/2}/\sqrt{2\pi}}{2\sqrt{y}} = \frac{1}{\sqrt{2\pi y}}e^{-y/2} ,\quad y\geq 0 .\]
+  Recall that a $\chi^2$ distribution with one degree of freedom has the density function
+  \[ f(x)=\frac{1}{\Gamma(\alpha)}\lambda^\alpha e^{-\lambda x}x^{\alpha-1} ,\quad x\geq 0, \]
+  where $\alpha = \lambda = 1$. Since $\Gamma(\demi) = \sqrt{\pi}$, we have $f(x) = \frac{1}{\sqrt{2\pi x}}e^{-x/2}$. As $Y$ has the same density function as $\chi^2$ with one degree of freedom, their distribution functions must be the same and hence they are identically distributed.
+\end{solution}
