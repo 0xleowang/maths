@@ -1,0 +1,14 @@
+% Exercise 2.21
+\begin{exercise}
+  Let $(X_1, X_2)$ be a 2-dimensional random vector with distribution function $F$. Show that $a_1\leq b_1$ and $a_2\leq b_2$,
+  \[ P\{a_1<X_1\leq b_1, a_2<X_2\leq b_2\} = F(b_1,b_2) - F(b_1, a_2) - F(a_1,b_2) + F(a_1,a_2) .\]
+\end{exercise}
+\begin{solution}
+  \begin{align*}
+    & P\{a_1<X_1\leq b_1, a_2<X_2\leq b_2\} \\
+      &\qquad= P\{X_1\leq b_1, a_2<X_2\leq b_2\} - P\{X_1\leq a_1, a_2<X_2\leq b_2\} \\
+      &\qquad= P\{X_1\leq b_1, X_2\leq b_2\} - P\{X_1\leq b_1, X_2\leq a_2\} \\
+      &\qquad\qquad\qquad - (P\{X_1\leq a_1, X_2\leq b_2\} - P\{X_1\leq a_1, X_2\leq a_2\}) \\
+      &\qquad= F(b_1,b_2) - F(b_1, a_2) - F(a_1,b_2) + F(a_1,a_2)
+  \end{align*}
+\end{solution}
