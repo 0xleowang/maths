@@ -24,3 +24,17 @@
   If $X=h(Y)$ for some Borel measurable function $h$, then $\sigma(X)\subseteq \sigma(Y)$, and hence $\sigma(X)=\sigma(Y)$.
 \end{solution}
 
+
+% Exercise 2.18
+\begin{exercise}
+  Prove that if $U\deq U[0, 1]$, and $\lambda>0$, then
+  \[ X = -(1/\lambda)\log U \]
+  satisfies $X\deq E(\lambda)$.
+\end{exercise}
+\begin{solution}
+  Let $g(u)=-(1/\lambda)\log u$, then $X=g(U)$. As $g(u)$ is monotonically descreasing in $u>0$, it has an inverse function $h(x)=e^{-\lambda x}$ with the derivative $h'(x)=-\lambda E^{-\lambda x}$. Since $U\in(0, 1]$, $X$ has values in $[0, \infty)$. Applying the Theorem 2.41,
+  \begin{align*}
+    f_X(x) = f_U(h(x))|h'(x)| = \lambda e^{-\lambda x}, \quad x\geq 0,
+  \end{align*}
+  which has the same density function as $E(\lambda)$. Hence their distribution functions must be the same and $X\deq E(\lambda)$.
+\end{solution}
