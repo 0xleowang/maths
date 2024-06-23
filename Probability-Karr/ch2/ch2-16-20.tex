@@ -8,3 +8,19 @@
     f_Y(y)=f_X(h(y))|h'(t)| = f_X(\log y)/y = \frac{1}{\sqrt{2\pi}y}e^{-(\log y)^2/2}, \quad y>0.
   \]
 \end{solution}
+
+
+% Exercise 2.17
+\begin{exercise}
+  Let $Y=g(X)$, where $X$ is a random variable and $g:\bR\to\bR$ is Borel measurable. Prove tha t$\sigma(Y)\subseteq\sigma(X)$. Conclude that if also $X=h(Y)$ for some $h$, then $\sigma(X) =\sigma(Y)$.
+\end{exercise}
+\begin{solution}
+  As $g$ is Borel measurable, $g^{-1}(B)\in\cB(\bR)$ for every $B\in\cB(\bR)$. Thus,
+  \begin{align*}
+    \sigma(Y) &= \{Y^{-1}(B):B\in\cB(\bR)\} \\
+      &= \{X^{-1}(g^{-1}(B)):B\in\cB(\bR)\} \\
+      &\subseteq \{X^{-1}(B):B\in\cB(\bR)\} = \sigma(X).
+  \end{align*}
+  If $X=h(Y)$ for some Borel measurable function $h$, then $\sigma(X)\subseteq \sigma(Y)$, and hence $\sigma(X)=\sigma(Y)$.
+\end{solution}
+
