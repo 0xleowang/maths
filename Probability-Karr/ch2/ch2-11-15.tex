@@ -115,3 +115,59 @@
   \[ e^{\lambda x}F(x) = e^{\lambda x} + C \quad\Rightarrow\quad F(x) = 1 + Ce^{-\lambda x} ,\]
   where $C$ is a constant. Since $X$ is positive and $F(0)=0$, we have $C=-1$ and $F(x)=1-e^{-\lambda x}$ that is the distribution function of $E(\lambda)$.
 \end{solution}
+
+
+% Exercise 2.14
+\begin{exercise}
+  a) Prove that if $X$ has a geometric distribution then
+  \begin{equation}\label{eq:2.15}
+    P\{X>n+k|X>n\} = P\{X>k\}
+  \end{equation}
+  for each $n$ and $k$. \\
+  b) Prove that if $X$ is a positive and integer-valued and satisfies \eqref{eq:2.15}, then $X$ has a geometric distribution.
+\end{exercise}
+\begin{solution}
+  a) If $X$ has a geometric distribution, then $P\{X=k\}=p(1-p)^{k-1}, k\geq 1$ for some $p\in(0, 1)$. For an arbitrary $n$ and $k$, the LHS of \eqref{eq:2.15} has
+  \begin{align*}
+    P\{X>n+k|X>n\} &= \frac{P\{X>n+k\}}{P\{X>n\}} \\
+      &= \frac{\Sigma_{i=n+k+1}^\infty p(1-p)^{i-1}}{\Sigma_{i=n+1}^\infty p(1-p)^{i-1}} \\
+      &= \frac{p(1-p)^{n+k}\Sigma_{j=0}^\infty(1-p)^j}{p(1-p)^n\Sigma_{j=0}^\infty(1-p)^j} \\
+      &= (1-p)^k.
+  \end{align*}
+  Then, the RHS of \eqref{eq:2.15} has
+  \[
+    P\{X>k\} = \Sigma_{i=k+1}^\infty p(1-p)^{i-1} = p(1-p)^k\Sigma_{j=0}^\infty(1-p)^j = \frac{p(1-p)^k}{1-(1-p)} = (1-p)^k.
+  \]
+  As the LHS equals to the RHS, the proof is compelte. \\
+
+  b) Applying the \textit{memoryless} property for $k=1$, we can get
+  \begin{align*}
+    1 - P\{X=1\} = P\{X>1\} &= P\{X>n+1|X>n\} \\
+      &= \frac{P\{X>n+1\}}{P\{X>n\}} \\
+      &= \frac{1 - P\{X\leq n+1\}}{1 - P\{X\leq n\}} \\
+      &= \frac{1 - P\{X\leq n\} - P\{X= n+1\}}{1 - P\{X\leq n\}} \\
+      &= 1 - \frac{P\{X= n+1\}}{1 - P\{X\leq n\}} .
+  \end{align*}
+  Rearranging gives
+  \[ P\{X=n+1\} = P\{X=1\}(1-P\{X\leq n\}) .\]
+  Denote $P\{X=1\}$ by $p$. For $n=0$,
+  \[ P\{X=1\} = P\{X=1\}(1-P\{X\leq 0\}) = p .\]
+  For $n=1$,
+  \[ P\{X=2\} = P\{X=1\}(1-P\{X\leq 1\}) = p(1-p) .\]
+  For $n=2$,
+  \begin{align*}
+    P\{X=3\} &= P\{X=1\}(1-P\{X\leq 2\}) \\
+      &= P\{X=1\}(1-P\{X=1\}-P\{X=2\}) \\
+      &= p(1-p-p(1-p)) \\
+      &= p(1-p)^2.
+  \end{align*}
+  Assume $P\{X=k\}=p(1-p)^{k-1}$ for all $k\leq n$, then for the $n+1$ case, we have
+  \begin{align*}
+    P\{X=n+1\} &= p(1-P\{X\leq n\}) \\
+      &= p(1 - \Sigma_{k=1}^n p(1-p)^k) \\
+      &= p(1 - p\Sigma_{k=1}^n (1-p)^k) \\
+      &= p(1 - p \frac{1-(1-p)^n}{1-(1-p)}) \\
+      &= p(1-p)^n .
+  \end{align*}
+  Therefore, we have shown that $P\{X=n\} = p(1-p)^{n-1}$ for all $n\geq 1$ by mathematical induction, and $X$ has a geometric distribution.
+\end{solution}
