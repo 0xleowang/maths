@@ -171,3 +171,31 @@
   \end{align*}
   Therefore, we have shown that $P\{X=n\} = p(1-p)^{n-1}$ for all $n\geq 1$ by mathematical induction, and $X$ has a geometric distribution.
 \end{solution}
+
+
+% Exercise 2.15
+\begin{exercise}
+  a) Prove that if $Y\deq E(\lambda)$, then for all $t$ and $s$,
+  \begin{equation}\label{eq:2.16}
+    P\{Y>t+s|Y>t\} = P\{Y>s\}.
+  \end{equation}
+  b) Prove that if $Y$ is absolutely continuous, positive and satisfies \eqref{eq:2.16}, then $Y$ has an exponential distribution.
+\end{exercise}
+\begin{solution}
+  a) If $Y\deq E(\lambda)$, then it has the distribution function $F(x) = 1-e^{-\lambda x}, x>0$.
+  The LHS of \eqref{eq:2.16} has
+  \begin{align*}
+    P\{Y>t+s|Y>t\} &= \frac{P\{Y>t+s\}}{P\{Y>t\}} \\
+      &= \frac{1-P\{Y\leq t+s\}}{1-P\{Y\leq t\}} \\
+      &= \frac{1-F(t+s)}{1-F(t)} \\
+      &= \frac{e^{-\lambda (t+s)}}{e^{-\lambda t}} \\
+      &= e^{-\lambda s} .
+  \end{align*}
+  And the RHS of \eqref{eq:2.16} has
+  \[ P\{X>s\} = 1-P\{X\leq s\} = 1-F(s) = e^{-\lambda s} ,\]
+  which is equal to the LHS. \\
+
+  b) Let $S(t)=P\{Y>t\}$ be the survivor function of $Y$. Using \eqref{eq:2.16}, we can get
+  \[ S(t+s) = S(t)S(s), \quad \forall s,t>0 .\]
+  This means that $S(t)$ must be in the exponential form, which has the general form $S(t)=ae^{bt}, a,b\in\bR$. Given $X$ is positive and hence $S(0)=1$, we can get $a=1$. Since $S(t)\to 0$ as $t\to\infty$, $b$ must be negative. Let $\lambda=-b$, thus $\lambda>0$ and $Y$ has the distribution function $F(x) = 1 - S(x) = 1 - e^{-\lambda x}$ (the same distribution function of $E(\lambda)$).
+\end{solution}
