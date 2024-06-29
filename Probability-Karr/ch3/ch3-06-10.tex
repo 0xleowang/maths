@@ -1,0 +1,20 @@
+% Exercise 3.7
+\begin{exercise}
+  Let $X\deq E(\lambda)$ and $Y\deq E(\lambda)$ be independent. Calculate the distribution of $Z=\min\{X,Y\}$.
+\end{exercise}
+\begin{solution}
+  Since $X\deq E(\lambda)$, it has $F_X(x)=1-e^{-\lambda x}$. Next,
+  \begin{align*}
+    F_Z(t) = P\{Z\leq t\} &= P\{\min\{X,Y\}\leq t\} \\
+      &= P\{X\leq t, X\leq Y\} + P\{Y\leq t, X>Y\} \\
+      &= P\{X\leq Y\leq t \} + P\{X\leq t<Y\} + P\{Y< X\leq t\} + P\{Y\leq t< X\} \\
+      &= P(\{X\leq Y\leq t\}\cup\{Y<X\leq t\}) + P\{X\leq t<Y\} + P\{Y\leq t< X\} \\
+      &= P\{X\leq t, Y\leq t\} + 2P\{X\leq t<Y\} \qquad\mbox{(by symmetry)} \\
+      &= P\{X\leq t, Y\leq t\} + 2P\{X\leq t, Y>t\} \\
+      &= P\{X\leq t\}P\{Y\leq t\} + 2P\{X\leq t\}P\{Y>t\} \qquad\mbox{(by independence)} \\
+      &= P\{X\leq t\}^2 + 2P\{X\leq t\}(1-P\{X\leq t\}) \qquad\mbox{(by symmetry)} \\
+      &= 2F_X(t) - F_X(t)^2 \\
+      &= 2(1-e^{-\lambda t}) - (1-e^{-\lambda t})^2 \\
+      &= 1 - e^{-2\lambda t} .
+  \end{align*}
+\end{solution}
