@@ -9,3 +9,18 @@
       &= 1 - \Pi_{i=1}^n (1-P(A_i))
   \end{align*}
 \end{solution}
+
+
+% Exercise 3.2
+\begin{exercise}
+  Show that an event whose probability is either zero or one is independent of every event, and that an event that is independent of itself has probability zero or one.
+\end{exercise}
+\begin{solution}
+  a) Let $A\in\cF$ such that $P(A)=0$ or $P(A)=1$, and let $B\in\cF$ be an arbitrary event such that $P(B)=p\in[0, 1]$.
+
+  For $P(A)=0$, we have $P(A\cap B)\leq P(A) = 0$ and $P(A\cap B)\leq 0$ by definition, hence $P(A\cup B) =0$. As $P(A)P(B)=0$, $P(A\cap B)=P(A)P(B)$ holds for $P(A)=0$.
+
+  For $P(A)=1$, we have $P(A\cap B)\leq P(B) = p$, and $P(A\cap B) = 1 - P(A^c\cup B^c) \geq 1 - P(A^c) - P(B^c) = 1 - 0 - (1-p) = p$, thus $P(A\cap B) = p$. As $P(A)P(B)=p$, $P(A\cap B)=P(A)P(B)$ holds for $P(A)=1$ as well. \\
+
+  b) Let $A\in\cF$ such that is independent of itself, that is $P(A)P(A) = P(A)$. Then $P(A)(P(A)-1)=0$, which has solutions $P(A)=0$ or $P(A)=1$.
+\end{solution}
