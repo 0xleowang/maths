@@ -12,3 +12,20 @@
       &\qquad= F(b_1,b_2) - F(b_1, a_2) - F(a_1,b_2) + F(a_1,a_2)
   \end{align*}
 \end{solution}
+
+
+% Exercise 2.22
+\begin{exercise}
+  Let the random vector $(X, Y)$ be uniformly distributed on the disk $D_\tau=\{(x, y): x^2+y^2\leq \tau^2\}$ in $\bR^2$. Calculate the joint distribution of $R=\sqrt{X^2+Y^2}$ and $\Theta=\arctan Y/X$.
+\end{exercise}
+\begin{solution}
+  As $(X, Y)$ is uniformly distributed on $D_\tau$, the density is a constant on $D_\tau$, that is on $D_\tau$,
+  \[ f_{(X, Y)} = 1/|D_\tau| = \frac{1}{\pi \tau^2} .\]
+  Using the polar coordinate system, let $X=R\cos\Theta$ and $Y=R\sin\Theta$, then $R = \sqrt{X^2+Y^2}$ and $\Theta=\arctan Y/X$. Given $X^2+Y^2\leq \tau^2$ in $D_\tau$, $R\in[0, \tau]$ and $\Theta\in(-\pi, \pi]$. Let $h(r, \theta) := (r\cos\theta, r\sin\theta)$, then $(X,Y) = h(R, \Theta)$. Applying Theorem 2.43, on $D'_\tau:=\{(r,\theta): r\in[0, \tau], \theta\in(-\pi, \pi]\}$,
+  \begin{align*}
+    f_{(R, \Theta)}(r,\theta) &= f_{(X, Y)}(h(r,\theta))|Jh(r, \theta)| \\
+      &= \frac{1}{\pi r^2} \begin{vmatrix}\cos\theta & -r\sin\theta \\ \sin\theta & r\cos\theta \end{vmatrix} \\
+      &= \frac{r}{\pi \tau^2}.
+  \end{align*}
+  (Verification: $\int_{-\pi}^\pi\int_0^\tau \frac{r}{\pi \tau^2} drd\theta = \frac{2\pi}{\pi \tau^2}(\demi \tau^2 - 0) = 1$. )
+\end{solution}
