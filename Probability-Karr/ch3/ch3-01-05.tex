@@ -33,3 +33,12 @@
 \begin{solution}
   [TODO]
 \end{solution}
+
+
+% Exercise 3.4
+\begin{exercise}
+  Prove that $A$ and $B$ are independent if and only if $P(B|A) = P(B)$.
+\end{exercise}
+\begin{solution}
+  For sufficiency, by independence, $P(B|A) = P(A\cap B)/P(A) = (P(A)P(B))/P(A) = P(B)$. For necessity, given $P(B) = P(B|A) = P(A\cap B)/P(A)$, rearranging gives $P(A\cap B)=P(A)P(B)$. Therefore, by Theorem 3.20, $A$ and $B$ are independent.
+\end{solution}
